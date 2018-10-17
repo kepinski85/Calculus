@@ -18,7 +18,7 @@ public class Calculator {
     }
 
 
-    public void calculator () {
+    public void calculator() {
 
         Scanner reader = new Scanner(System.in);
         arrCount = 0;
@@ -36,12 +36,11 @@ public class Calculator {
             //break loop and calculate result if '=' appears and set suitable size of arrCount
             if (met.contains("=")) {
                 arrCount--;
-                System.out.println(in);
-                System.out.println(met);
+
                 calculate();
+
                 in.clear();
                 met.clear();
-
 
             }
 
@@ -52,95 +51,59 @@ public class Calculator {
 
     public void calculate() {
 
-        int pa = 2;
-        int pb = 1;
-        long result = 0;
+        int pa = 1;
+        int pb = 0;
+        long result = in.get(0);
 
-        //first use of methods to set result
+        arrCount--;
 
-        if (met.get(0).equals("+")) {
+        while (arrCount >= 0) {
 
-            result = sum(in.get(0), in.get(1));
-        }
-
-        if (met.get(0).equals("-")) {
-
-            result = subt(in.get(0), in.get(1));
-        }
-
-        if (met.get(0).equals("*")) {
-
-            result = mult(in.get(0), in.get(1));
-        }
-
-        if (met.get(0).equals("/")) {
-
-            result = div(in.get(0), in.get(1));
-        }
-
-        if (met.get(0).equals("%")) {
-
-            result = mod(in.get(0), in.get(1));
-        }
-
-        System.out.println(arrCount);
-        //next methods used on result
-
-        while (arrCount >= 0){
-
-            if(met.get(pb).equals("=")){
+            if (met.get(pb).equals("=")) {
 
                 break;
             }
 
             if (met.get(pb).equals("+")) {
 
-                result = sum(in.get(pa), in.get(pa + 1));
+                result = sum(result, in.get(pa));
+                pa++;
                 pb++;
-                pa++;
-                pa++;
+
             }
 
             if (met.get(pb).equals("-")) {
 
-                result = subt(in.get(pa), in.get(pa + 1));
+                result = subt(result, in.get(pa));
+                pa++;
                 pb++;
-                pa++;
-                pa++;
             }
 
             if (met.get(pb).equals("*")) {
 
-                result = mult(in.get(pa), in.get(pa + 1));
+                result = mult(result, in.get(pa));
+                pa++;
                 pb++;
-                pa++;
-                pa++;
             }
 
             if (met.get(pb).equals("/")) {
 
-                result = div(in.get(pa), in.get(pa + 1));
+                result = div(result, in.get(pa));
+                pa++;
                 pb++;
-                pa++;
-                pa++;
             }
 
             if (met.get(pb).equals("%")) {
 
-                result = mod(in.get(pa), in.get(pa + 1));
+                result = mod(result, in.get(pa));
+                pa++;
                 pb++;
-                pa++;
-                pa++;
             }
 
             arrCount--;
-            arrCount--;
         }
 
-
         System.out.println(result);
-
-
 
     }
 
@@ -194,6 +157,5 @@ public class Calculator {
 
         return modOf;
     }
-
 
 }
