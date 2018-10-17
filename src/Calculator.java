@@ -3,8 +3,8 @@ import java.util.*;
 
 public class Calculator {
 
-    private int first;
-    private int secound;
+    private long first;
+    private long secound;
 
 
     public Calculator() {
@@ -15,52 +15,52 @@ public class Calculator {
     }
 
 
-    public void sum(int one, int two) {
+    public void sum(long one, long two) {
 
         first = one;
         secound = two;
-        int sumOf;
+        long sumOf;
         sumOf = one + two;
 
         System.out.println(sumOf);
 
     }
 
-    public void subt(int one, int two) {
+    public void subt(long one, long two) {
 
         first = one;
         secound = two;
-        int subtOf;
+        long subtOf;
         subtOf = one - two;
 
         System.out.println(subtOf);
     }
 
-    public void mult(int one, int two) {
+    public void mult(long one, long two) {
 
         first = one;
         secound = two;
-        int multOf;
+        long multOf;
         multOf = one * two;
 
         System.out.println(multOf);
     }
 
-    public void div(int one, int two) {
+    public void div(long one, long two) {
 
         first = one;
         secound = two;
-        int divOf;
+        long divOf;
         divOf = one / two;
 
         System.out.println(divOf);
     }
 
-    public void mod(int one, int two) {
+    public void mod(long one, long two) {
 
         first = one;
         secound = two;
-        int modOf;
+        long modOf;
         modOf = one % two;
 
         System.out.println(modOf);

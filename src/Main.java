@@ -7,8 +7,8 @@ public class Main {
         Scanner reader = new Scanner(System.in);
 
         Calculator calc = new Calculator();
-        int a;
-        int b;
+        long a;
+        long b;
         String method;
         String start;
 
