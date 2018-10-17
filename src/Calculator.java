@@ -5,7 +5,7 @@ public class Calculator {
 
     private long first;
     private long secound;
-    private int arrCount = 0;
+    private int arrCount;
     private ArrayList<Long> in = new ArrayList<Long>();
     private ArrayList<String> met = new ArrayList<String>();
 
@@ -21,6 +21,7 @@ public class Calculator {
     public void calculator () {
 
         Scanner reader = new Scanner(System.in);
+        arrCount = 0;
 
 
         while (true) {
@@ -32,11 +33,11 @@ public class Calculator {
             //check size of arrays
             arrCount++;
 
-            //break loop if '=' appears and set suitable size of arrCount
+            //break loop and calculate result if '=' appears and set suitable size of arrCount
             if (met.contains("=")) {
                 arrCount--;
-                //System.out.println(in);
-                //System.out.println(met);
+                System.out.println(in);
+                System.out.println(met);
                 calculate();
                 in.clear();
                 met.clear();
@@ -51,51 +52,93 @@ public class Calculator {
 
     public void calculate() {
 
-        int pa = 0;
-        int pb = 0;
+        int pa = 2;
+        int pb = 1;
         long result = 0;
+
+        //first use of methods to set result
 
         if (met.get(0).equals("+")) {
 
             result = sum(in.get(0), in.get(1));
-            pb++;
-            pb++;
-            pa++;
         }
 
         if (met.get(0).equals("-")) {
 
             result = subt(in.get(0), in.get(1));
-            pb++;
-            pb++;
-            pa++;
         }
 
         if (met.get(0).equals("*")) {
 
             result = mult(in.get(0), in.get(1));
-            pb++;
-            pb++;
-            pa++;
         }
 
         if (met.get(0).equals("/")) {
 
             result = div(in.get(0), in.get(1));
-            pb++;
-            pb++;
-            pa++;
         }
 
         if (met.get(0).equals("%")) {
 
             result = mod(in.get(0), in.get(1));
-            pb++;
-            pb++;
-            pa++;
+        }
+        arrCount--;
+        arrCount--;
+
+        //next methods used on result
+
+        while (arrCount >= 0){
+
+            if (met.get(pb).equals("="))
+            {
+                break;
+            }
+
+            if (met.get(pb).equals("+")) {
+
+                result = sum(in.get(pa), in.get(pa + 1));
+                pb++;
+                pa++;
+                pa++;
+            }
+
+            if (met.get(pb).equals("-")) {
+
+                result = subt(in.get(pa), in.get(pa + 1));
+                pb++;
+                pa++;
+                pa++;
+            }
+
+            if (met.get(pb).equals("*")) {
+
+                result = mult(in.get(pa), in.get(pa + 1));
+                pb++;
+                pa++;
+                pa++;
+            }
+
+            if (met.get(pb).equals("/")) {
+
+                result = div(in.get(pa), in.get(pa + 1));
+                pb++;
+                pa++;
+                pa++;
+            }
+
+            if (met.get(pb).equals("%")) {
+
+                result = mod(in.get(pa), in.get(pa + 1));
+                pb++;
+                pa++;
+                pa++;
+            }
+
+            arrCount--;
+            arrCount--;
         }
 
-        arrCount--;
+
         System.out.println(result);
 
 
