@@ -5,6 +5,9 @@ public class Calculator {
 
     private long first;
     private long secound;
+    private int arrCount = 0;
+    private ArrayList<Long> in = new ArrayList<Long>();
+    private ArrayList<String> met = new ArrayList<String>();
 
 
     public Calculator() {
@@ -20,15 +23,10 @@ public class Calculator {
         Scanner reader = new Scanner(System.in);
 
 
-        ArrayList<Integer> in = new ArrayList<Integer>();
-        ArrayList<String> met = new ArrayList<String>();
-
-        int arrCount = 0;
-
         while (true) {
 
             //input int + method
-            in.add(reader.nextInt());
+            in.add(reader.nextLong());
             met.add(reader.next());
 
             //check size of arrays
@@ -45,56 +43,109 @@ public class Calculator {
         System.out.println(met);
     }
 
+    public void calculate() {
 
-    public void sum(long one, long two) {
+        while (arrCount >= 0) {
+
+            int pa = 0;
+            int pb = 0;
+
+            if (met.get(pa).equals("+")) {
+
+                sum(in.get(pb), in.get(pb + 1));
+                pb++;
+                pb++;
+                pa++;
+            }
+
+            if (met.get(pa).equals("-")) {
+
+                subt(in.get(pb), in.get(pb + 1));
+                pb++;
+                pb++;
+                pa++;
+            }
+
+            if (met.get(pa).equals("*")) {
+
+                mult(in.get(pb), in.get(pb + 1));
+                pb++;
+                pb++;
+                pa++;
+            }
+
+            if (met.get(pa).equals("/")) {
+
+                div(in.get(pb), in.get(pb + 1));
+                pb++;
+                pb++;
+                pa++;
+            }
+
+            if (met.get(pa).equals("%")) {
+
+                mod(in.get(pb), in.get(pb + 1));
+                pb++;
+                pb++;
+                pa++;
+            }
+
+
+            arrCount--;
+        }
+
+
+    }
+
+    public long sum(long one, long two) {
 
         first = one;
         secound = two;
         long sumOf;
         sumOf = one + two;
 
-        System.out.println(sumOf);
+        return sumOf;
 
     }
 
-    public void subt(long one, long two) {
+    public long subt(long one, long two) {
 
         first = one;
         secound = two;
         long subtOf;
         subtOf = one - two;
 
-        System.out.println(subtOf);
+        return subtOf;
     }
 
-    public void mult(long one, long two) {
+    public long mult(long one, long two) {
 
         first = one;
         secound = two;
         long multOf;
         multOf = one * two;
 
-        System.out.println(multOf);
+        return multOf;
     }
 
-    public void div(long one, long two) {
+    public long div(long one, long two) {
 
         first = one;
         secound = two;
         long divOf;
         divOf = one / two;
 
-        System.out.println(divOf);
+        return divOf;
     }
 
-    public void mod(long one, long two) {
+    public long mod(long one, long two) {
 
         first = one;
         secound = two;
         long modOf;
         modOf = one % two;
 
-        System.out.println(modOf);
+        return modOf;
     }
 
 

@@ -8,6 +8,7 @@ public class Main {
         Calculator calc = new Calculator();
 
         calc.input();
+        calc.calculate();
 
 
 
