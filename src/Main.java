@@ -7,27 +7,38 @@ public class Main {
         Scanner reader = new Scanner(System.in);
 
         Calculator calc = new Calculator();
-        int a = Integer.parseInt(reader.next());
-        String method = reader.next();
-        int b = Integer.parseInt(reader.next());
-        String start = reader.next();
+        int a;
+        int b;
+        String method;
+        String start;
 
-        if (start.equals("=") && method.equals("+")) {
+        while (true) {
+            a = reader.nextInt();
+            method = reader.next();
+            b = reader.nextInt();
+            start = reader.next();
 
-            calc.sum(a, b);
-        } else if (start.equals("=") && method.equals("-")) {
 
-            calc.subt(a, b);
-        } else if (start.equals("=") && method.equals("*")) {
+            if (start.equals("=") && method.equals("+")) {
 
-            calc.mult(a, b);
-        } else if (start.equals("=") && method.equals("/")) {
+                calc.sum(a, b);
+            } else if (start.equals("=") && method.equals("-")) {
 
-            calc.div(a, b);
-        } else if (start.equals("=")&& method.equals("%")) {
+                calc.subt(a, b);
+            } else if (start.equals("=") && method.equals("*")) {
 
-            calc.mod(a, b);
+                calc.mult(a, b);
+            } else if (start.equals("=") && method.equals("/")) {
+
+                calc.div(a, b);
+            } else if (start.equals("=")&& method.equals("%")) {
+
+                calc.mod(a, b);
+            }
+
         }
+
+
 
 
 

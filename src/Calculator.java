@@ -22,7 +22,8 @@ public class Calculator {
         int sumOf;
         sumOf = one + two;
 
-        System.out.print(sumOf);
+        System.out.println(sumOf);
+
     }
 
     public void subt(int one, int two) {
@@ -32,7 +33,7 @@ public class Calculator {
         int subtOf;
         subtOf = one - two;
 
-        System.out.print(subtOf);
+        System.out.println(subtOf);
     }
 
     public void mult(int one, int two) {
@@ -42,7 +43,7 @@ public class Calculator {
         int multOf;
         multOf = one * two;
 
-        System.out.print(multOf);
+        System.out.println(multOf);
     }
 
     public void div(int one, int two) {
@@ -52,7 +53,7 @@ public class Calculator {
         int divOf;
         divOf = one / two;
 
-        System.out.print(divOf);
+        System.out.println(divOf);
     }
 
     public void mod(int one, int two) {
@@ -62,7 +63,7 @@ public class Calculator {
         int modOf;
         modOf = one % two;
 
-        System.out.print(modOf);
+        System.out.println(modOf);
     }
 
 
