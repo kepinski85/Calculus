@@ -15,6 +15,37 @@ public class Calculator {
     }
 
 
+    public void input() {
+
+        Scanner reader = new Scanner(System.in);
+
+
+        ArrayList<Integer> in = new ArrayList<Integer>();
+        ArrayList<String> met = new ArrayList<String>();
+
+        int arrCount = 0;
+
+        while (true) {
+
+            //input int + method
+            in.add(reader.nextInt());
+            met.add(reader.next());
+
+            //check size of arrays
+            arrCount++;
+
+            //break loop if '=' appears and set suitable size of arrCount
+            if (met.contains("=")) {
+                arrCount--;
+                break;
+            }
+        }
+
+        System.out.println(in);
+        System.out.println(met);
+    }
+
+
     public void sum(long one, long two) {
 
         first = one;
