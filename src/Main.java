@@ -1,51 +1,36 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner reader = new Scanner(System.in);
 
+
+        Scanner reader = new Scanner(System.in);
         Calculator calc = new Calculator();
-        long a;
-        long b;
-        String method;
-        String start;
+
+        ArrayList<Integer> in = new ArrayList<Integer>();
+        ArrayList<String> met = new ArrayList<String>();
+
+        int arrCount = 0;
 
         while (true) {
-            a = reader.nextInt();
-            method = reader.next();
-            b = reader.nextInt();
-            start = reader.next();
 
+            in.add(reader.nextInt());
+            met.add(reader.next());
 
-            if (start.equals("=") && method.equals("+")) {
+            arrCount++;
 
-                calc.sum(a, b);
-            } else if (start.equals("=") && method.equals("-")) {
-
-                calc.subt(a, b);
-            } else if (start.equals("=") && method.equals("*")) {
-
-                calc.mult(a, b);
-            } else if (start.equals("=") && method.equals("/")) {
-
-                calc.div(a, b);
-            } else if (start.equals("=")&& method.equals("%")) {
-
-                calc.mod(a, b);
+            if (met.contains("=")) {
+                arrCount--;
+                break;
             }
-
         }
 
+        System.out.println(in.size());
+        System.out.println(met.size());
+        System.out.println(arrCount);
 
-
-
-
-}
-
-
-
-
-
+    }
 }
