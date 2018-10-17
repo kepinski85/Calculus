@@ -82,15 +82,14 @@ public class Calculator {
 
             result = mod(in.get(0), in.get(1));
         }
-        arrCount--;
-        arrCount--;
 
+        System.out.println(arrCount);
         //next methods used on result
 
         while (arrCount >= 0){
 
-            if (met.get(pb).equals("="))
-            {
+            if(met.get(pb).equals("=")){
+
                 break;
             }
 
